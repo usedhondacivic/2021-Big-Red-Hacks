@@ -2,6 +2,25 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 
+import alien from './data/alien.jpg'
+
+/** 
+ * </SubContainer>
+        <Pane size = "2x2"></Pane>
+        <SubContainer size="2x2">
+          <Pane size = "2x1"></Pane>
+          <Pane size = "2x1"></Pane>
+        </SubContainer>
+        <SubContainer size="2x2">
+          <Pane size = "2x1"></Pane>
+          <Pane size = "1x1"></Pane>
+          <Pane size = "1x1"></Pane>
+        </SubContainer>
+        <Pane size = "2x2"></Pane>
+        <Pane size = "2x2"></Pane>
+        <Pane size = "2x2"></Pane>
+      </div>
+*/
 class Header extends React.Component {
   render() {
     return (
@@ -39,18 +58,20 @@ function App() {
         <h1 className = "title">The Space Times Continuum</h1>
       </Header>
       <div className = "contentContainer">
-        <SubContainer size="2x2">
+        <SubContainer size = "3x3">
+          <SubContainer size = "2x3">
+          <Pane size = "2x2">
+            Hello, I am an article.
+            <img src={alien}></img>
+          </Pane>
           <Pane size = "2x1"></Pane>
-          <Pane size = "2x1"></Pane>
+          </SubContainer>
+          <SubContainer size = "1x3">
+            <Pane size = "1x1"></Pane>
+            <Pane size = "1x1"></Pane>
+            <Pane size = "1x1"></Pane>
+          </SubContainer>
         </SubContainer>
-        <SubContainer size="2x2">
-          <Pane size = "2x1"></Pane>
-          <Pane size = "1x1"></Pane>
-          <Pane size = "1x1"></Pane>
-        </SubContainer>
-        <Pane size = "2x1"></Pane>
-        <Pane size = "2x2"></Pane>
-        <Pane size = "2x2"></Pane>
       </div>
     </div>
   );

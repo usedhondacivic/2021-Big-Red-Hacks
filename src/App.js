@@ -3,6 +3,10 @@ import './App.css';
 import React from 'react';
 
 import alien from './data/alien.jpg'
+import planets from './data/planets.txt'
+import firstNames from './data/first-names.txt'
+import titles from './data/titles.txt'
+
 
 const deepai = require('deepai');
 deepai.setApiKey('ce191c40-186c-4f63-8f55-d52048319c0b');
@@ -44,8 +48,10 @@ class AITextContent extends React.Component {
   }
   componentDidMount(){
   (async function() {
+    var topics = ["politics", "travel", "economy", "health", "sports", "technology", "food"]
+    var starter = GenerateStarterText(topics[Math.floor(Math.random()*7)])
     var resp = await deepai.callStandardApi("text-generator", {
-      text: this.props.headline,
+      text: starter,
       });
       this.setState({
         response: resp.output
@@ -66,6 +72,28 @@ class SubContainer extends React.Component {
   }
 }
 
+
+function GenerateStarterText(type) {
+  switch (type) {
+    case "politics":
+      return "Politics"
+    case "travel":
+      return "Travel sentence. "
+    case "economy":
+      return "economy"
+    case "health":
+      return "health"
+    case "sports":
+      return "sports"
+    case "technology":
+      return "technology"
+    case "food":
+      return "food"
+    default:
+      return
+  }
+}
+
 function App() {
   return (
     <div className="App">
@@ -79,7 +107,7 @@ function App() {
             <img src={alien}></img>
           </Pane>
           <Pane size = "2x1">
-            
+
           </Pane>
           </SubContainer>
           <SubContainer size = "1x3">
@@ -90,7 +118,7 @@ function App() {
         </SubContainer>
         <SubContainer size = "2x3">
           <Pane size = "2x1">
-            <AITextContent headline="AI Newspaper"/>
+            <AITextContent headline="AI Newspaper" body=""/>
           </Pane>
           <Pane size = "2x1"></Pane>
           <Pane size = "1x1"></Pane>
@@ -98,7 +126,7 @@ function App() {
         </SubContainer>
         <SubContainer size = "2x3">
           <Pane size = "2x2">
-            <AITextContent headline="Space Times Continuum goes public"/>
+            <AITextContent headline="Space Times Continuum goes public" body=""/>
           </Pane>
           <Pane size = "2x1"></Pane>
         </SubContainer>

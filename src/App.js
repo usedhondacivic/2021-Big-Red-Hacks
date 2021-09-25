@@ -66,6 +66,46 @@ class SubContainer extends React.Component {
   }
 }
 
+/*==============Marco Functionc========= */
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    var allText
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                allText = rawFile.responseText;
+            }
+        }
+    }
+    rawFile.send(null);
+
+    return allText
+}
+function fileList(file){
+    let altText =readTextFile(file);
+    let list = [];;
+    let word=""
+    for(let i= 0; i<altText.length;i++){
+        if(altText[i]=='\n'){
+            fileList.push(word)
+            word="";
+        }
+        else if(altText[i]!='\r'){
+            word+=altText[i]
+        }
+    }
+    return list;
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
 function App() {
   return (
     <div className="App">

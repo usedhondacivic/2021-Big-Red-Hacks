@@ -8,7 +8,7 @@
   --two-pane-size: calc(var(--pane-basis) * 2 + var(--margin) - var(--border) * 2);
   --three-pane-size: calc(var(--pane-basis) * 3 + 2 *var(--margin) - var(--border) * 2);
   --four-pane-size: calc(var(--pane-basis) * 4 + 3 *var(--margin) - var(--border) * 2);
-  --border: 2px;
+  --border: 0px;
 }
 
 html {
@@ -25,8 +25,9 @@ h1 {
   font-family: 'Gideon Roman', cursive;
 }
 
-h3 {
+h2 {
   margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 img {
@@ -35,7 +36,42 @@ img {
   object-fit: cover;
 }
 
-.textContent{
+p {
+  margin: 2px;
+}
+
+.ticker {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.green, .red {
+  margin-right: 10px;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.alert {
+  color: red;
+}
+
+.weatherIcon {
+  float: right;
+  font-size: 100px;
+  margin-right: 50px;
+  margin-top: 0px;
+}
+
+.contentPadding{
+  display: inline-block;
   margin: 10px;
 }
 
@@ -76,6 +112,11 @@ img {
 .subContainer3x3{
   width: calc(var(--three-pane-size) + 2 * var(--border));
   height: calc(var(--three-pane-size) + 2 * var(--border));
+}
+
+.subContainer3x1{
+  width: calc(var(--three-pane-size) + 2 * var(--border));
+  height: calc(var(--pane-size) + 2 * var(--border));
 }
 
 .subContainer1x4{

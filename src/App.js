@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 
 import alien from './data/alien.jpg'
+import Marquee from "react-fast-marquee";
 
 const deepai = require('deepai');
 deepai.setApiKey('ce191c40-186c-4f63-8f55-d52048319c0b');
@@ -11,7 +12,7 @@ class Header extends React.Component {
   render() {
     return (
       <div className = "header">
-        {this.props.children}
+          {this.props.children}
       </div>
     )
   }
@@ -31,7 +32,7 @@ class Pane extends React.Component {
 class TextContent extends React.Component {
   render() {
     return <div className = "contentPadding">
-      <h3>{this.props.headline}</h3>
+      <h2>{this.props.headline}</h2>
       <p>{this.props.body}</p>
     </div>
   }
@@ -79,7 +80,7 @@ class Weather extends React.Component {
 
     return <>
       <div className = "contentPadding">
-      <p>Today's Weather</p>
+      <h3>Today's Weather</h3>
       <p>{"Rain: " + rain}</p>
       <p>{"QZone: " + qzone}</p>
       <p>{"Hydrogen Count: " + hydrogenCount}</p>
@@ -90,6 +91,25 @@ class Weather extends React.Component {
     </div>
     <p className = "weatherIcon">{currentWeather}</p>
     </>
+  }
+}
+
+class Ticker extends React.Component {
+  generateTickers() {
+    let abr = ["TICKER", "UR", "MOM", "DEEZ", "TIK", "ANF", "ENGD", "CS", "BRH", "EFJLSK", "\u263F", "\u2640", "\u2641", "\u2642", "\u2643", "\u2644", "\u26E2", "\u2646", "APPL", "TSLA", "HI"];
+    let final = [];
+    for(var i in abr){
+      let change = (Math.random() * 10 - 5).toFixed(2);
+      final.push(
+        <span className={change > 0 ? "green" : "red"}> {abr[i] + " " + change + "%" }</span>
+      );
+    }
+    return final;
+  }
+  render() {
+    return <Marquee className = "ticker" gradient = {false} speed = {40}>
+      {this.generateTickers()}
+    </Marquee>
   }
 }
 
@@ -107,6 +127,7 @@ function App() {
     <div className="App">
       <Header>
         <h1 className = "title">The Space Times Continuum</h1>
+        <Ticker></Ticker>
       </Header>
       <div className = "contentContainer">
         <SubContainer size = "2x3">
@@ -143,7 +164,6 @@ function App() {
             <AITextContent headline="Space Times Continuum goes public"/>
           </Pane>
         </SubContainer>
-        
         <SubContainer size="2x2">
           <Pane size = "2x1">
           <AITextContent headline = "Amateur team wins hackathon."/>

@@ -35,7 +35,23 @@ img {
   object-fit: cover;
 }
 
-.textContent{
+p {
+  margin: 2px;
+}
+
+.alert {
+  color: red;
+}
+
+.weatherIcon {
+  float: right;
+  font-size: 100px;
+  margin-right: 50px;
+  margin-top: 0px;
+}
+
+.contentPadding{
+  display: inline-block;
   margin: 10px;
 }
 
@@ -76,6 +92,11 @@ img {
 .subContainer3x3{
   width: calc(var(--three-pane-size) + 2 * var(--border));
   height: calc(var(--three-pane-size) + 2 * var(--border));
+}
+
+.subContainer3x1{
+  width: calc(var(--three-pane-size) + 2 * var(--border));
+  height: calc(var(--pane-size) + 2 * var(--border));
 }
 
 .subContainer1x4{

@@ -2,12 +2,26 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 
+<<<<<<< HEAD
 import alien from './data/alien.jpg'
 import names from './data/first-names.txt'
 import titles from './data/titles.txt'
 import planets from './data/planets.txt'
 
+=======
+>>>>>>> 6a37325356624be2e832c91871777e8752b2423b
 import Marquee from "react-fast-marquee";
+
+import alien from './data/alien.jpg';
+import moon from './data/moon.jpg';
+import pattern from './data/pattern.png';
+import particle from './data/particle.jfif';
+import eye from './data/eye.png';
+import earth from './data/earth.jpg';
+import man_in_moon from './data/man_in_moon.jpg';
+import comet from './data/comet.jpg';
+import killer_whale from './data/killer_whale.png';
+import jupiter from './data/jupiter.jpg';
 
 const deepai = require('deepai');
 deepai.setApiKey('ce191c40-186c-4f63-8f55-d52048319c0b');
@@ -45,10 +59,11 @@ class TextContent extends React.Component {
 class AITextContent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {response: ""};
+    this.state = {response: "Loading your news..."};
   }
 
   componentDidMount(){
+  document.title = "The Space Time Continuum";
   (async function() {
     var topics = ["politics", "travel", "economy", "health", "sports", "technology", "food"]
     var starter = await GenerateStarterText(topics[Math.floor(Math.random()*7)])
@@ -121,6 +136,21 @@ class Ticker extends React.Component {
   }
 }
 
+class AlienLanguage extends React.Component {
+  generateText(length){
+    let final = ""
+    for(var i = 0; i < length; i ++){
+      let index = Math.floor(Math.random() * this.props.characters.length);
+      final += this.props.characters.charAt(index);
+    }
+    return final;
+  }
+
+  render() {
+    return <TextContent headline = {this.generateText(20)} body = {this.generateText(1500)}/>
+  }
+}
+
 class SubContainer extends React.Component {
   render() {
     let className = "subContainer" + this.props.size;
@@ -130,6 +160,26 @@ class SubContainer extends React.Component {
   }
 }
 
+<<<<<<< HEAD
+=======
+/*==============Marco Functionc========= */
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    var allText
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status === 0)
+            {
+                allText = rawFile.responseText;
+            }
+        }
+    }
+    rawFile.send(null);
+>>>>>>> 6a37325356624be2e832c91871777e8752b2423b
 
 async function getFromFile(file) {
   return fetch(file)
@@ -139,11 +189,28 @@ async function getFromFile(file) {
     return arrayText[Math.floor(Math.random()*arrayText.length)]
   });
 }
+<<<<<<< HEAD
 
 function genLastName(name) {
   name = name.split("").reverse().join("").toLowerCase()
   var first = name.charAt(0)
   return name = first.toUpperCase() + name.substring(1, name.length)
+=======
+function fileList(file){
+    let altText =readTextFile(file);
+    let list = [];;
+    let word=""
+    for(let i= 0; i<altText.length;i++){
+        if(altText[i]=='\n'){
+            fileList.push(word)
+            word="";
+        }
+        else if(altText[i]!=='\r'){
+            word+=altText[i]
+        }
+    }
+    return list;
+>>>>>>> 6a37325356624be2e832c91871777e8752b2423b
 }
 
 async function genFullName() {
@@ -218,57 +285,121 @@ function App() {
     <div className="App">
       <Header>
         <h1 className = "title">The Space Times Continuum</h1>
+        <p className = "subtitle">The best source of news in the observable universe.</p>
         <Ticker></Ticker>
+        <title>The Space Times Continuum</title>
       </Header>
       <div className = "contentContainer">
         <SubContainer size = "2x3">
         <Pane size = "2x2">
-          <img src={alien}></img>
+          <img src={moon}></img>
         </Pane>
         <Pane size = "2x1">
-          <AITextContent headline="War on Planet Zorg"/>
+          <AITextContent headline="War on Planet Zorg Rages On"/>
         </Pane>
         </SubContainer>
+<<<<<<< HEAD
 
         <SubContainer size = "2x3">
           <Pane size = "2x1">
             <AITextContent headline="AI Newspaper" body=""/>
+=======
+        <SubContainer size = "2x3">
+          <Pane size = "2x1">
+            <AITextContent headline="AI Newspaper Achieves Sentience; Writes Garbage"/>
+>>>>>>> 6a37325356624be2e832c91871777e8752b2423b
           </Pane>
           <Pane size = "2x1">
-            <AITextContent headline="AI Newspaper"/>
+          <AlienLanguage characters="▣ ■ □ ▢◯▲▶►▼◆◢◣◤◥"/>
           </Pane>
-          <Pane size = "1x1"></Pane>
-          <Pane size = "1x1"></Pane>
-        </SubContainer>
-        <SubContainer size = "1x3">
           <Pane size = "1x1">
+<<<<<<< HEAD
 
+=======
+            <img src={eye}></img>
           </Pane>
-          <Pane size = "1x1"></Pane>
-          <Pane size = "1x1"></Pane>
+          <Pane size = "1x1">
+            <img src={earth}></img>
+>>>>>>> 6a37325356624be2e832c91871777e8752b2423b
+          </Pane>
         </SubContainer>
+          <Pane size = "1x3">
+            <AITextContent headline="Prices of Sky Property Fall to Historic Lows"/>
+          </Pane>
         <SubContainer size = "2x3">
           <Pane size = "2x1">
             <Weather/>
           </Pane>
           <Pane size = "2x2">
+<<<<<<< HEAD
             <AITextContent headline="Space Times Continuum goes public" body=""/>
+=======
+            <img src={particle}></img>
+          </Pane>
+        </SubContainer>
+        <SubContainer size = "3x2">
+          <Pane size="3x1">
+            <AITextContent headline="Sector E76 Scheduled for Routine Annihilation"/>
+          </Pane>
+          <Pane size= "1x1">
+            <img src={man_in_moon}></img>
+          </Pane>
+          <Pane size= "2x1">
+            <AITextContent headline="Man in Moon Looses Eye"/>
+>>>>>>> 6a37325356624be2e832c91871777e8752b2423b
+          </Pane>
+        </SubContainer>
+        <Pane size = "2x2">
+          <span className = "barcode">
+            <AlienLanguage characters="abcdefghijklmnopqrstuvwxyz     "/>
+          </span>
+        </Pane>
+        <SubContainer size="2x2">
+          <Pane size = "2x1">
+          <AITextContent headline = "Amateur Team Wins Big Red Hacks"/>
+          </Pane>
+          <Pane size = "2x1">
+            <AITextContent headline="Protobirds in Lab Learn to Swim"/>
           </Pane>
         </SubContainer>
         <SubContainer size="2x2">
           <Pane size = "2x1">
-          <AITextContent headline = "Amateur team wins hackathon."/>
+            <AlienLanguage characters="∰ ⋰ ⋱ ∶ ∷ ∴ ∵ ⋘ ⋙"/>
           </Pane>
-          <Pane size = "2x1"></Pane>
-        </SubContainer>
-        <SubContainer size="2x2">
-          <Pane size = "2x1"></Pane>
-          <Pane size = "1x1"></Pane>
+          <Pane size = "1x1">
+            <AlienLanguage characters="á é íóúüñ"/>
+          </Pane>
           <Pane size = "1x1"></Pane>
         </SubContainer>
-        <Pane size = "2x2"></Pane>
-        <Pane size = "2x2"></Pane>
-        <Pane size = "2x2"></Pane>
+        <Pane size = "2x2">
+          <AlienLanguage characters="ꓯ ꓭ ꓛ ꓷ ꓱ ꓞꟻꓨꓩꓘꓶꟽИꟼꓤЯƧꓕꓵꓥ/Ʌ"/>
+        </Pane>
+        <Pane size="2x2">
+          <AITextContent headline = "Space Times Continuum Goes Public"/>
+        </Pane>
+        <Pane size = "1x2">
+          <img src={pattern}></img>
+        </Pane>
+        <Pane size = "1x2">
+          <img src={killer_whale}></img>
+        </Pane>
+        <Pane size = "2x2">
+          <AITextContent headline = "Everything You Have Read in this Newspaper is a Lie"/>
+        </Pane>
+        <Pane size = "1x2">
+          <img src={comet}></img>
+        </Pane>
+        <SubContainer size = "3x2">
+          <Pane size="3x1">
+            <AITextContent headline="Food Shortages Across Galaxy Caused by Hungry Hippo"/>
+          </Pane>
+          <Pane size= "1x1">
+            <img src={jupiter}></img>
+          </Pane>
+          <Pane size= "2x1">
+            <AITextContent headline="You Could be Here!"/>
+          </Pane>
+        </SubContainer>
       </div>
     </div>
   );

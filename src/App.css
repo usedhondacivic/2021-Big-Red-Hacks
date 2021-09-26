@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap');
 
 :root {
   --margin: 5px;
@@ -40,6 +41,10 @@ p {
   margin: 2px;
 }
 
+.barcode {
+  font-family: 'Libre Barcode 39', cursive;
+}
+
 .ticker {
   margin-top: -10px;
   margin-bottom: 20px;
@@ -63,10 +68,15 @@ p {
   color: red;
 }
 
+.subtitle {
+  margin-top: -30px;
+  margin-bottom: 20px;
+}
+
 .weatherIcon {
   float: right;
   font-size: 100px;
-  margin-right: 50px;
+  margin-right: 10px;
   margin-top: 0px;
 }
 
@@ -119,6 +129,11 @@ p {
   height: calc(var(--pane-size) + 2 * var(--border));
 }
 
+.subContainer3x2{
+  width: calc(var(--three-pane-size) + 2 * var(--border));
+  height: calc(var(--two-pane-size) + 2 * var(--border));
+}
+
 .subContainer1x4{
   width: calc(var(--pane-size) + 2 * var(--border));
   height: calc(var(--four-pane-size) + 2 * var(--border));
@@ -143,6 +158,11 @@ p {
   height: var(--pane-size);
 }
 
+.pane1x3 {
+  width: var(--pane-size);
+  height: var(--three-pane-size);
+}
+
 .pane2x2 {
   width: var(--two-pane-size);
   height: var(--two-pane-size);
@@ -150,5 +170,15 @@ p {
 
 .pane2x1 {
   width: var(--two-pane-size);
+  height: var(--pane-size);
+}
+
+.pane1x2 {
+  width: var(--pane-size);
+  height: var(--two-pane-size);
+}
+
+.pane3x1 {
+  width: var(--three-pane-size);
   height: var(--pane-size);
 }

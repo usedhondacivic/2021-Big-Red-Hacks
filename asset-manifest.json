@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/2021-Big-Red-Hacks/static/css/main.dafe1050.chunk.css",
-    "main.js": "/2021-Big-Red-Hacks/static/js/main.9f609379.chunk.js",
-    "main.js.map": "/2021-Big-Red-Hacks/static/js/main.9f609379.chunk.js.map",
+    "main.js": "/2021-Big-Red-Hacks/static/js/main.a21a1fe8.chunk.js",
+    "main.js.map": "/2021-Big-Red-Hacks/static/js/main.a21a1fe8.chunk.js.map",
     "runtime-main.js": "/2021-Big-Red-Hacks/static/js/runtime-main.688ad1dd.js",
     "runtime-main.js.map": "/2021-Big-Red-Hacks/static/js/runtime-main.688ad1dd.js.map",
     "static/js/2.8126fa47.chunk.js": "/2021-Big-Red-Hacks/static/js/2.8126fa47.chunk.js",
@@ -28,6 +28,6 @@
     "static/js/runtime-main.688ad1dd.js",
     "static/js/2.8126fa47.chunk.js",
     "static/css/main.dafe1050.chunk.css",
-    "static/js/main.9f609379.chunk.js"
+    "static/js/main.a21a1fe8.chunk.js"
   ]
 }

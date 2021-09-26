@@ -2,14 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 
-<<<<<<< HEAD
-import alien from './data/alien.jpg'
 import names from './data/first-names.txt'
 import titles from './data/titles.txt'
 import planets from './data/planets.txt'
 
-=======
->>>>>>> 6a37325356624be2e832c91871777e8752b2423b
 import Marquee from "react-fast-marquee";
 
 import alien from './data/alien.jpg';
@@ -160,26 +156,6 @@ class SubContainer extends React.Component {
   }
 }
 
-<<<<<<< HEAD
-=======
-/*==============Marco Functionc========= */
-function readTextFile(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    var allText
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status === 0)
-            {
-                allText = rawFile.responseText;
-            }
-        }
-    }
-    rawFile.send(null);
->>>>>>> 6a37325356624be2e832c91871777e8752b2423b
 
 async function getFromFile(file) {
   return fetch(file)
@@ -189,28 +165,11 @@ async function getFromFile(file) {
     return arrayText[Math.floor(Math.random()*arrayText.length)]
   });
 }
-<<<<<<< HEAD
 
 function genLastName(name) {
   name = name.split("").reverse().join("").toLowerCase()
   var first = name.charAt(0)
   return name = first.toUpperCase() + name.substring(1, name.length)
-=======
-function fileList(file){
-    let altText =readTextFile(file);
-    let list = [];;
-    let word=""
-    for(let i= 0; i<altText.length;i++){
-        if(altText[i]=='\n'){
-            fileList.push(word)
-            word="";
-        }
-        else if(altText[i]!=='\r'){
-            word+=altText[i]
-        }
-    }
-    return list;
->>>>>>> 6a37325356624be2e832c91871777e8752b2423b
 }
 
 async function genFullName() {
@@ -298,29 +257,19 @@ function App() {
           <AITextContent headline="War on Planet Zorg Rages On"/>
         </Pane>
         </SubContainer>
-<<<<<<< HEAD
 
         <SubContainer size = "2x3">
           <Pane size = "2x1">
             <AITextContent headline="AI Newspaper" body=""/>
-=======
-        <SubContainer size = "2x3">
-          <Pane size = "2x1">
-            <AITextContent headline="AI Newspaper Achieves Sentience; Writes Garbage"/>
->>>>>>> 6a37325356624be2e832c91871777e8752b2423b
           </Pane>
           <Pane size = "2x1">
           <AlienLanguage characters="▣ ■ □ ▢◯▲▶►▼◆◢◣◤◥"/>
           </Pane>
           <Pane size = "1x1">
-<<<<<<< HEAD
-
-=======
             <img src={eye}></img>
           </Pane>
           <Pane size = "1x1">
             <img src={earth}></img>
->>>>>>> 6a37325356624be2e832c91871777e8752b2423b
           </Pane>
         </SubContainer>
           <Pane size = "1x3">
@@ -331,9 +280,6 @@ function App() {
             <Weather/>
           </Pane>
           <Pane size = "2x2">
-<<<<<<< HEAD
-            <AITextContent headline="Space Times Continuum goes public" body=""/>
-=======
             <img src={particle}></img>
           </Pane>
         </SubContainer>
@@ -346,7 +292,6 @@ function App() {
           </Pane>
           <Pane size= "2x1">
             <AITextContent headline="Man in Moon Looses Eye"/>
->>>>>>> 6a37325356624be2e832c91871777e8752b2423b
           </Pane>
         </SubContainer>
         <Pane size = "2x2">

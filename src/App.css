@@ -129,6 +129,11 @@ p {
   height: calc(var(--pane-size) + 2 * var(--border));
 }
 
+.subContainer3x2{
+  width: calc(var(--three-pane-size) + 2 * var(--border));
+  height: calc(var(--two-pane-size) + 2 * var(--border));
+}
+
 .subContainer1x4{
   width: calc(var(--pane-size) + 2 * var(--border));
   height: calc(var(--four-pane-size) + 2 * var(--border));
@@ -165,5 +170,15 @@ p {
 
 .pane2x1 {
   width: var(--two-pane-size);
+  height: var(--pane-size);
+}
+
+.pane1x2 {
+  width: var(--pane-size);
+  height: var(--two-pane-size);
+}
+
+.pane3x1 {
+  width: var(--three-pane-size);
   height: var(--pane-size);
 }

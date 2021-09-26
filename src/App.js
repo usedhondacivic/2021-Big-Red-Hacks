@@ -6,6 +6,11 @@ import Marquee from "react-fast-marquee";
 
 import alien from './data/alien.jpg';
 import moon from './data/moon.jpg';
+import pattern from './data/pattern.png';
+import particle from './data/particle.jfif';
+import eye from './data/eye.png'
+import earth from './data/earth.jpg'
+import man_in_moon from './data/man_in_moon.jpg'
 
 const deepai = require('deepai');
 deepai.setApiKey('ce191c40-186c-4f63-8f55-d52048319c0b');
@@ -47,6 +52,7 @@ class AITextContent extends React.Component {
   }
 
   componentDidMount(){
+  document.title = "The Space Time Continuum";
   (async function() {
     var resp = await deepai.callStandardApi("text-generator", {
       text: this.props.headline,
@@ -188,6 +194,7 @@ function App() {
         <h1 className = "title">The Space Times Continuum</h1>
         <p className = "subtitle">The best source of news in the observable universe.</p>
         <Ticker></Ticker>
+        <title>The Space Times Continuum</title>
       </Header>
       <div className = "contentContainer">
         <SubContainer size = "2x3">
@@ -195,39 +202,61 @@ function App() {
           <img src={moon}></img>
         </Pane>
         <Pane size = "2x1">
-          <AITextContent headline="War on Planet Zorg"/>
+          <AITextContent headline="War on Planet Zorg Rages On"/>
         </Pane>
         </SubContainer>
-        
         <SubContainer size = "2x3">
           <Pane size = "2x1">
-            <AITextContent headline="AI Newspaper"/>
+            <AITextContent headline="AI Newspaper Achieves Sentience; Writes Garbage"/>
           </Pane>
           <Pane size = "2x1">
           <AlienLanguage characters="▣ ■ □ ▢◯▲▶►▼◆◢◣◤◥"/>
           </Pane>
-          <Pane size = "1x1"></Pane>
-          <Pane size = "1x1"></Pane>
+          <Pane size = "1x1">
+            <img src={eye}></img>
+          </Pane>
+          <Pane size = "1x1">
+            <img src={earth}></img>
+          </Pane>
         </SubContainer>
           <Pane size = "1x3">
-            <AITextContent headline="Sector E76 Scheduled for Routine Annihilation"/>
+            <AITextContent headline="Prices of Sky Property Fall to Historic Lows"/>
           </Pane>
         <SubContainer size = "2x3">
           <Pane size = "2x1">
             <Weather/>
           </Pane>
           <Pane size = "2x2">
-            <AITextContent headline="Space Times Continuum goes public"/>
+            <img src={particle}></img>
+          </Pane>
+        </SubContainer>
+        <SubContainer size = "3x2">
+          <Pane size="3x1">
+            <AITextContent headline="Sector E76 Scheduled for Routine Annihilation"/>
+          </Pane>
+          <Pane size= "1x1">
+            <img src={man_in_moon}></img>
+          </Pane>
+          <Pane size= "2x1">
+            <AITextContent headline="Man in Moon Looses Eye"/>
+          </Pane>
+        </SubContainer>
+        <Pane size = "2x2">
+          <span className = "barcode">
+            <AlienLanguage characters="abcdefghijklmnopqrstuvwxyz     "/>
+          </span>
+        </Pane>
+        <SubContainer size="2x2">
+          <Pane size = "2x1">
+          <AITextContent headline = "Amateur Team Wins Big Red Hacks"/>
+          </Pane>
+          <Pane size = "2x1">
+            <AITextContent headline="Protobirds in Lab Learn to Swim"/>
           </Pane>
         </SubContainer>
         <SubContainer size="2x2">
           <Pane size = "2x1">
-          <AITextContent headline = "Amateur team wins hackathon."/>
-          </Pane>
-          <Pane size = "2x1"></Pane>
-        </SubContainer>
-        <SubContainer size="2x2">
-          <Pane size = "2x1">
+            <AlienLanguage characters="∰ ⋰ ⋱ ∶ ∷ ∴ ∵ ⋘ ⋙"/>
           </Pane>
           <Pane size = "1x1"></Pane>
           <Pane size = "1x1"></Pane>
@@ -235,10 +264,11 @@ function App() {
         <Pane size = "2x2">
           <AlienLanguage characters="ꓯ ꓭ ꓛ ꓷ ꓱ ꓞꟻꓨꓩꓘꓶꟽИꟼꓤЯƧꓕꓵꓥ/Ʌ"/>
         </Pane>
-        <Pane size = "2x2">
-          <span className = "barcode">
-            <AlienLanguage characters="abcdefghijklmnopqrstuvwxyz     "/>
-          </span>
+        <Pane size="2x2">
+          <AITextContent headline = "Space Times Continuum Goes Public"/>
+        </Pane>
+        <Pane size = "1x2">
+          <img src={pattern}></img>
         </Pane>
         <Pane size = "2x2"></Pane>
       </div>

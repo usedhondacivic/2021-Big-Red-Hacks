@@ -2,8 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 
-import alien from './data/alien.jpg'
 import Marquee from "react-fast-marquee";
+
+import alien from './data/alien.jpg';
+import moon from './data/moon.jpg';
 
 const deepai = require('deepai');
 deepai.setApiKey('ce191c40-186c-4f63-8f55-d52048319c0b');
@@ -41,7 +43,7 @@ class TextContent extends React.Component {
 class AITextContent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {response: ""};
+    this.state = {response: "Loading your news..."};
   }
 
   componentDidMount(){
@@ -113,6 +115,21 @@ class Ticker extends React.Component {
   }
 }
 
+class AlienLanguage extends React.Component {
+  generateText(length){
+    let final = ""
+    for(var i = 0; i < length; i ++){
+      let index = Math.floor(Math.random() * this.props.characters.length);
+      final += this.props.characters.charAt(index);
+    }
+    return final;
+  }
+
+  render() {
+    return <TextContent headline = {this.generateText(20)} body = {this.generateText(1500)}/>
+  }
+}
+
 class SubContainer extends React.Component {
   render() {
     let className = "subContainer" + this.props.size;
@@ -132,7 +149,7 @@ function readTextFile(file)
     {
         if(rawFile.readyState === 4)
         {
-            if(rawFile.status === 200 || rawFile.status == 0)
+            if(rawFile.status === 200 || rawFile.status === 0)
             {
                 allText = rawFile.responseText;
             }
@@ -151,7 +168,7 @@ function fileList(file){
             fileList.push(word)
             word="";
         }
-        else if(altText[i]!='\r'){
+        else if(altText[i]!=='\r'){
             word+=altText[i]
         }
     }
@@ -169,12 +186,13 @@ function App() {
     <div className="App">
       <Header>
         <h1 className = "title">The Space Times Continuum</h1>
+        <p className = "subtitle">The best source of news in the observable universe.</p>
         <Ticker></Ticker>
       </Header>
       <div className = "contentContainer">
         <SubContainer size = "2x3">
         <Pane size = "2x2">
-          <img src={alien}></img>
+          <img src={moon}></img>
         </Pane>
         <Pane size = "2x1">
           <AITextContent headline="War on Planet Zorg"/>
@@ -186,18 +204,14 @@ function App() {
             <AITextContent headline="AI Newspaper"/>
           </Pane>
           <Pane size = "2x1">
-            <AITextContent headline="AI Newspaper"/>
+          <AlienLanguage characters="▣ ■ □ ▢◯▲▶►▼◆◢◣◤◥"/>
           </Pane>
           <Pane size = "1x1"></Pane>
           <Pane size = "1x1"></Pane>
         </SubContainer>
-        <SubContainer size = "1x3">
-          <Pane size = "1x1">
-            
+          <Pane size = "1x3">
+            <AITextContent headline="Sector E76 Scheduled for Routine Annihilation"/>
           </Pane>
-          <Pane size = "1x1"></Pane>
-          <Pane size = "1x1"></Pane>
-        </SubContainer>
         <SubContainer size = "2x3">
           <Pane size = "2x1">
             <Weather/>
@@ -213,12 +227,19 @@ function App() {
           <Pane size = "2x1"></Pane>
         </SubContainer>
         <SubContainer size="2x2">
-          <Pane size = "2x1"></Pane>
+          <Pane size = "2x1">
+          </Pane>
           <Pane size = "1x1"></Pane>
           <Pane size = "1x1"></Pane>
         </SubContainer>
-        <Pane size = "2x2"></Pane>
-        <Pane size = "2x2"></Pane>
+        <Pane size = "2x2">
+          <AlienLanguage characters="ꓯ ꓭ ꓛ ꓷ ꓱ ꓞꟻꓨꓩꓘꓶꟽИꟼꓤЯƧꓕꓵꓥ/Ʌ"/>
+        </Pane>
+        <Pane size = "2x2">
+          <span className = "barcode">
+            <AlienLanguage characters="abcdefghijklmnopqrstuvwxyz     "/>
+          </span>
+        </Pane>
         <Pane size = "2x2"></Pane>
       </div>
     </div>

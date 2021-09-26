@@ -66,7 +66,7 @@ class AITextContent extends React.Component {
     var topics = ["politics", "travel", "economy", "health", "sports", "technology", "food"]
     var starter = await GenerateStarterText(topics[Math.floor(Math.random()*7)])
     var resp = await deepai.callStandardApi("text-generator", {
-      text: starter,
+      text: that.props.headline,
       });
       that.setState({
         response: resp.output
@@ -262,7 +262,7 @@ function App() {
 
         <SubContainer size = "2x3">
           <Pane size = "2x1">
-            <AITextContent headline="AI Newspaper" body=""/>
+            <AITextContent headline="AI Newspaper Becomes Sentient; Writes Garbage" body=""/>
           </Pane>
           <Pane size = "2x1">
           <AlienLanguage characters="▣ ■ □ ▢◯▲▶►▼◆◢◣◤◥"/>

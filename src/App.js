@@ -8,9 +8,12 @@ import alien from './data/alien.jpg';
 import moon from './data/moon.jpg';
 import pattern from './data/pattern.png';
 import particle from './data/particle.jfif';
-import eye from './data/eye.png'
-import earth from './data/earth.jpg'
-import man_in_moon from './data/man_in_moon.jpg'
+import eye from './data/eye.png';
+import earth from './data/earth.jpg';
+import man_in_moon from './data/man_in_moon.jpg';
+import comet from './data/comet.jpg';
+import killer_whale from './data/killer_whale.png';
+import jupiter from './data/jupiter.jpg';
 
 const deepai = require('deepai');
 deepai.setApiKey('ce191c40-186c-4f63-8f55-d52048319c0b');
@@ -258,7 +261,9 @@ function App() {
           <Pane size = "2x1">
             <AlienLanguage characters="∰ ⋰ ⋱ ∶ ∷ ∴ ∵ ⋘ ⋙"/>
           </Pane>
-          <Pane size = "1x1"></Pane>
+          <Pane size = "1x1">
+            <AlienLanguage characters="á é íóúüñ"/>
+          </Pane>
           <Pane size = "1x1"></Pane>
         </SubContainer>
         <Pane size = "2x2">
@@ -270,7 +275,26 @@ function App() {
         <Pane size = "1x2">
           <img src={pattern}></img>
         </Pane>
-        <Pane size = "2x2"></Pane>
+        <Pane size = "1x2">
+          <img src={killer_whale}></img>
+        </Pane>
+        <Pane size = "2x2">
+          <AITextContent headline = "Everything You Have Read in this Newspaper is a Lie"/>
+        </Pane>
+        <Pane size = "1x2">
+          <img src={comet}></img>
+        </Pane>
+        <SubContainer size = "3x2">
+          <Pane size="3x1">
+            <AITextContent headline="Food Shortages Across Galaxy Caused by Hungry Hippo"/>
+          </Pane>
+          <Pane size= "1x1">
+            <img src={jupiter}></img>
+          </Pane>
+          <Pane size= "2x1">
+            <AITextContent headline="You Could be Here!"/>
+          </Pane>
+        </SubContainer>
       </div>
     </div>
   );

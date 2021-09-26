@@ -100,7 +100,7 @@ class Weather extends React.Component {
     let currentWeather = weatherSymbols[Math.floor(Math.random() * weatherSymbols.length)]
 
     return <>
-      <div className = "contentPadding">
+      <div className = "contentPadding weather">
       <h3>Today's Weather</h3>
       <p>{"Rain: " + rain}</p>
       <p>{"QZone: " + qzone}</p>

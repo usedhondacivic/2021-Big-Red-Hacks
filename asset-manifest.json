@@ -1,33 +1,36 @@
 {
   "files": {
     "main.css": "/2021-Big-Red-Hacks/static/css/main.dafe1050.chunk.css",
-    "main.js": "/2021-Big-Red-Hacks/static/js/main.d12b560b.chunk.js",
-    "main.js.map": "/2021-Big-Red-Hacks/static/js/main.d12b560b.chunk.js.map",
+    "main.js": "/2021-Big-Red-Hacks/static/js/main.1a290077.chunk.js",
+    "main.js.map": "/2021-Big-Red-Hacks/static/js/main.1a290077.chunk.js.map",
     "runtime-main.js": "/2021-Big-Red-Hacks/static/js/runtime-main.688ad1dd.js",
     "runtime-main.js.map": "/2021-Big-Red-Hacks/static/js/runtime-main.688ad1dd.js.map",
-    "static/js/2.8126fa47.chunk.js": "/2021-Big-Red-Hacks/static/js/2.8126fa47.chunk.js",
-    "static/js/2.8126fa47.chunk.js.map": "/2021-Big-Red-Hacks/static/js/2.8126fa47.chunk.js.map",
+    "static/js/2.5c500c75.chunk.js": "/2021-Big-Red-Hacks/static/js/2.5c500c75.chunk.js",
+    "static/js/2.5c500c75.chunk.js.map": "/2021-Big-Red-Hacks/static/js/2.5c500c75.chunk.js.map",
     "static/js/3.ea9f0a61.chunk.js": "/2021-Big-Red-Hacks/static/js/3.ea9f0a61.chunk.js",
     "static/js/3.ea9f0a61.chunk.js.map": "/2021-Big-Red-Hacks/static/js/3.ea9f0a61.chunk.js.map",
     "index.html": "/2021-Big-Red-Hacks/index.html",
     "static/css/main.dafe1050.chunk.css.map": "/2021-Big-Red-Hacks/static/css/main.dafe1050.chunk.css.map",
-    "static/js/2.8126fa47.chunk.js.LICENSE.txt": "/2021-Big-Red-Hacks/static/js/2.8126fa47.chunk.js.LICENSE.txt",
+    "static/js/2.5c500c75.chunk.js.LICENSE.txt": "/2021-Big-Red-Hacks/static/js/2.5c500c75.chunk.js.LICENSE.txt",
     "static/media/alien.aa6a2c78.jpg": "/2021-Big-Red-Hacks/static/media/alien.aa6a2c78.jpg",
     "static/media/comet.89be7e83.jpg": "/2021-Big-Red-Hacks/static/media/comet.89be7e83.jpg",
     "static/media/earth.eaf4c4ec.jpg": "/2021-Big-Red-Hacks/static/media/earth.eaf4c4ec.jpg",
     "static/media/eye.8efb292e.png": "/2021-Big-Red-Hacks/static/media/eye.8efb292e.png",
+    "static/media/first-names.08a9ee42.txt": "/2021-Big-Red-Hacks/static/media/first-names.08a9ee42.txt",
     "static/media/jupiter.66de8b36.jpg": "/2021-Big-Red-Hacks/static/media/jupiter.66de8b36.jpg",
     "static/media/killer_whale.00602468.png": "/2021-Big-Red-Hacks/static/media/killer_whale.00602468.png",
     "static/media/logo.31d6cfe0.svg": "/2021-Big-Red-Hacks/static/media/logo.31d6cfe0.svg",
     "static/media/man_in_moon.05f4b3df.jpg": "/2021-Big-Red-Hacks/static/media/man_in_moon.05f4b3df.jpg",
     "static/media/moon.ee887de5.jpg": "/2021-Big-Red-Hacks/static/media/moon.ee887de5.jpg",
     "static/media/particle.bc42fd46.jfif": "/2021-Big-Red-Hacks/static/media/particle.bc42fd46.jfif",
-    "static/media/pattern.01660e2f.png": "/2021-Big-Red-Hacks/static/media/pattern.01660e2f.png"
+    "static/media/pattern.01660e2f.png": "/2021-Big-Red-Hacks/static/media/pattern.01660e2f.png",
+    "static/media/planets.9943e268.txt": "/2021-Big-Red-Hacks/static/media/planets.9943e268.txt",
+    "static/media/titles.99bbc6d1.txt": "/2021-Big-Red-Hacks/static/media/titles.99bbc6d1.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.688ad1dd.js",
-    "static/js/2.8126fa47.chunk.js",
+    "static/js/2.5c500c75.chunk.js",
     "static/css/main.dafe1050.chunk.css",
-    "static/js/main.d12b560b.chunk.js"
+    "static/js/main.1a290077.chunk.js"
   ]
 }

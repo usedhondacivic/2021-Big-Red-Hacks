@@ -3,6 +3,10 @@ import './App.css';
 import React from 'react';
 
 import alien from './data/alien.jpg'
+import names from './data/first-names.txt'
+import titles from './data/titles.txt'
+import planets from './data/planets.txt'
+
 import Marquee from "react-fast-marquee";
 
 const deepai = require('deepai');
@@ -47,7 +51,7 @@ class AITextContent extends React.Component {
   componentDidMount(){
   (async function() {
     var topics = ["politics", "travel", "economy", "health", "sports", "technology", "food"]
-    var starter = GenerateStarterText(topics[Math.floor(Math.random()*7)])
+    var starter = await GenerateStarterText(topics[Math.floor(Math.random()*7)])
     var resp = await deepai.callStandardApi("text-generator", {
       text: starter,
       });
@@ -56,6 +60,8 @@ class AITextContent extends React.Component {
       });
     }).call(this);
   }
+
+
 
   render() {
     return <TextContent headline={this.props.headline} body={this.state.response} />
@@ -125,25 +131,86 @@ class SubContainer extends React.Component {
 }
 
 
-function GenerateStarterText(type) {
+async function getFromFile(file) {
+  return fetch(file)
+  .then(r => r.text())
+  .then(text => {
+    var arrayText = text.split("\n")
+    return arrayText[Math.floor(Math.random()*arrayText.length)]
+  });
+}
+
+function genLastName(name) {
+  name = name.split("").reverse().join("").toLowerCase()
+  var first = name.charAt(0)
+  return name = first.toUpperCase() + name.substring(1, name.length)
+}
+
+async function genFullName() {
+  var firstName = (await getFromFile(names)).slice(0, -1)
+  var lastName = genLastName((await getFromFile(names)).trim(0, -1))
+  if (Math.floor(Math.random()*20) < 3) {
+    var title = (await getFromFile(titles)).trim(0, -1)
+  } else {
+    var title = ""
+  }
+  if (Math.floor(Math.random()*10) < 5) {
+    var middleName = (await getFromFile(names)).trim(0, -1)
+    var fullName = title + " " + firstName + " " + middleName + " " + lastName
+  } else {
+    var fullName = title + " " + firstName + " " + lastName
+  }
+  return fullName
+}
+
+async function genPlanet() {
+  return await getFromFile(planets)
+}
+
+async function GenerateStarterText(type) {
+  var timePeriods = ["winter", "spring", "summer", "autumn", "week", "month", "year", "decade", "century", "millennium"]
+  var pronouns = ["his", "her", "their"]
+  var fullName = await genFullName()
+  var planet = await genPlanet()
+  var timePeriod = timePeriods[Math.floor(Math.random()*timePeriods.length)]
+  var pronoun = pronouns[Math.floor(Math.random()*pronouns.length)]
+
+  var options
   switch (type) {
     case "politics":
-      return "Politics"
+      options = [fullName + " has just won the " +planet+ " election in a landslide, "+fullName+" reports to The Space Times Continuum.",
+      "BREAKING: In a stunning turn of events, the "+planet+" army has invaded "+(await genPlanet())+", sparking concern from all over the galaxy.",
+      fullName+" has announced "+pronoun+" resignation from the "+planet+" gubernatorial race.",
+      ]
+      break;
     case "travel":
-      return "Travel sentence. "
+      options = ["A hot new destination has opened for those looking to embark on exciting adventures: "+planet+".",
+      fullName +" recommends everyone take a trip to "+planet+" this "+timePeriod+".",
+      "\""+planet+" was the best trip I ever took\" says "+fullName+" of the planet "+(await genPlanet())+".",
+      ]
+      break;
     case "economy":
-      return "economy"
+      options = ["Optimistic financial analyst "+fullName+" says the current recession will be over soon."]
+      break;
     case "health":
-      return "health"
+      options = ["A pandemic on the planet "+planet+" has put the whole system into lockdown. President "+fullName+" calls for cooperation and empathy in these trying times.",
+      "\"This is groundbreaking.\" A new "+genLastName((await getFromFile(names)).trim(0, -1))+"virus drug has entered trials in worms on the research planet " +planet+" of the "+(await genPlanet())+" system."]
+      break;
     case "sports":
-      return "sports"
+      options = ["A shocking upset to the reigning "+planet+"ball champions by the "+(await genPlanet())+" planetorial team finds the sport in an uproar."]
+      break;
     case "technology":
-      return "technology"
+      options = ["The new (new) iPhone "+Math.floor(Math.random()*200)+ " has been announced at the centennial "+planet+" developer's conference to much acclaim and fanfare. However, some tech analysts criticize the new phone's lack of a phone in the box, which Apple calls necessary \"to better support galactic sustainibility\"."
+
+    ]
+      break;
     case "food":
-      return "food"
-    default:
-      return
+      options = ["Try the new delicacy that's sweeping the "+planet+" system!",
+      "Concerns of food poisoning has prompted a shutdown of the popular "+planet+" restaurant "+genLastName((await getFromFile(names)).trim(0, -1))+"."
+    ]
+      break;
   }
+  return options[Math.floor(Math.random()*options.length)]
 }
 
 function App() {

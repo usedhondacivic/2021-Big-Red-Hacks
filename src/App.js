@@ -107,12 +107,24 @@ class Weather extends React.Component {
 
 class Ticker extends React.Component {
   generateTickers() {
-    let abr = ["TICKER", "UR", "MOM", "DEEZ", "TIK", "ANF", "ENGD", "CS", "BRH", "EFJLSK", "\u263F", "\u2640", "\u2641", "\u2642", "\u2643", "\u2644", "\u26E2", "\u2646", "APPL", "TSLA", "HI"];
+    let alpha = ["","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    let w=""
+    let abr = [];
+    for(let i=0;i<20;i++){
+      w="";
+      for(let j=0;j<3;j++){
+        w += alpha[Math.floor(Math.random() * 26)];
+      }
+      abr.push(w);
+    }
+
+    // abr = ["TICKER", "UR", "MOM", "DEEZ", "TIK", "ANF", "ENGD", "CS", "BRH", "EFJLSK", "\u263F", "\u2640", "\u2641", "\u2642", "\u2643", "\u2644", "\u26E2", "\u2646", "APPL", "TSLA", "HI"];
+    
     let final = [];
     for(var i in abr){
       let change = (Math.random() * 10 - 5).toFixed(2);
       final.push(
-        <span className={change > 0 ? "green" : "red"}> {abr[i] + " " + change + "%" }</span>
+        <span className={change > 0 ? "green" : "red"}> {abr[i] + " "+(change > 0 ? "\u2191" : "\u2193") + change + "%" }</span>
       );
     }
     return final;

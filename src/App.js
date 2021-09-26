@@ -55,15 +55,18 @@ class AITextContent extends React.Component {
   }
 
   componentDidMount(){
-  document.title = "The Space Time Continuum";
-  (async function() {
-    var resp = await deepai.callStandardApi("text-generator", {
-      text: this.props.headline,
-      });
-      this.setState({
-        response: resp.output
-      });
-    }).call(this);
+    document.title = "The Space Time Continuum";
+    let that = this;
+
+    (async function() {
+      console.log("tried");
+      var resp = await deepai.callStandardApi("text-generator", {
+        text: that.props.headline,
+        });
+        that.setState({
+          response: resp.output
+        });
+    })();
   }
 
   render() {

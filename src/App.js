@@ -66,7 +66,7 @@ class AITextContent extends React.Component {
     var topics = ["politics", "travel", "economy", "health", "sports", "technology", "food"]
     var starter = await GenerateStarterText(topics[Math.floor(Math.random()*7)])
     var resp = await deepai.callStandardApi("text-generator", {
-      text: that.props.headline,
+      text: starter,
       });
       that.setState({
         response: resp.output

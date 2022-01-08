@@ -1,4 +1,4 @@
-#2021-Big-Red-Hacks
+# 2021-Big-Red-Hacks
 
 Our entry into Cornell's big red hackathon.
 
